@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/roboto.woff2),
+    url(/fonts/roboto-light-webfont.woff);
+    font-display: swap;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset {
+    background-color: #ffffff;
+    padding: 20px 30px;
+	box-shadow: 6px 6px 3px 0px #999999;
+	border-radius: 10px;
+}
+
+legend {
+  background-color: #cce5ff;
+  color: #004085;
+  padding: 5px 10px;
+  border: 2px solid #b8daff;
+  border-radius: 5px;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+}
+
+.botones .enviar,
+.botones .borrar{
+    width: 20%;
+}
+
+input:focus{
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid blue;
+    /* color: red; */
+}
+
+button {
+    outline: none;
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    margin: 5px;
+    width: 100px;
+    padding: 10px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.botones .borrar{
+    background-color: red;
+    border-color: red;
+}
+
+button.enviar:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+button.borrar:hover {
+    background-color: rgb(196, 5, 5);
+    border-color: rgb(196, 5, 5);
+}
+
+
+.form-group {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(160px, max-content) minmax(max-content, 350px));
+    grid-template-rows: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+}
+
+.condiciones{
+    grid-column: 1/3;
+}
+
+#form_registro fieldset div label.error{
+    font-size: 0.8em;
+    color: #F00;
+    grid-column: 2/3;
+}
+
+#form_registro fieldset div.form-check label.error{
+    grid-column: 1/3;
+}
+
+label.error {
+    color: red;
+    font-size: 12px;
+}
+
+input.error{
+    border: 1px solid red;
+}
+
+@media(max-width: 570px){
+    .container {
+        width: 400px;
+    }
+
+    .form-group {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1, 1fr);
+        grid-auto-rows: 1fr;
+    }
+ 
+    #form_registro fieldset div label.error{
+        font-size: 0.8em;
+        color: #F00;
+        grid-column: 1/1;
+    }
+ 
+    .botones{
+        flex-wrap: wrap;
+    }
+ 
+    .botones .enviar,
+    .botones .borrar{
+        width: 100%;
+    }
+}
